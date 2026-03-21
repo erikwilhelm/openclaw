@@ -225,6 +225,28 @@ RUN --mount=type=cache,id=openclaw-bookworm-apt-cache,target=/var/cache/apt,shar
 RUN ln -sf /app/openclaw.mjs /usr/local/bin/openclaw \
  && chmod 755 /app/openclaw.mjs
 
+# Optionally install Homebrew (Linuxbrew) for brew-based skill dependencies.
+# Build with: docker build --build-arg OPENCLAW_INSTALL_BREW=1 ...
+ARG OPENCLAW_INSTALL_BREW=""
+RUN --mount=type=cache,id=openclaw-bookworm-apt-cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,id=openclaw-bookworm-apt-lists,target=/var/lib/apt,sharing=locked \
+    if [ -n "$OPENCLAW_INSTALL_BREW" ]; then \
+      apt-get update && \
+      DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        build-essential ca-certificates curl file git python3 && \
+      mkdir -p /home/linuxbrew /home/node/.cache && \
+      chown -R node:node /home/linuxbrew /home/node/.cache && \
+      su - node -c 'NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"' && \
+      ln -sf /home/linuxbrew/.linuxbrew/Homebrew/Library /home/linuxbrew/.linuxbrew/Library && \
+      ln -sf /home/linuxbrew/.linuxbrew/bin/brew /usr/local/bin/brew && \
+      mkdir -p /usr/local/var/homebrew/locks /usr/local/opt \
+              /usr/local/etc /usr/local/include /usr/local/lib \
+              /usr/local/sbin /usr/local/share/doc /usr/local/share/man/man1 && \
+      chown -R node:node /home/linuxbrew /home/node/.cache \
+              /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib \
+              /usr/local/opt /usr/local/sbin /usr/local/share /usr/local/var; \
+    fi
+
 ENV NODE_ENV=production
 
 # Security hardening: Run as non-root user

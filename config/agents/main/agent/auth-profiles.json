@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "profiles": {
+    "openai:default": {
+      "type": "api_key",
+      "provider": "openai",
+      "key": "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"
+    }
+  },
+  "lastGood": {
+    "openai": "openai:default"
+  }
+}
