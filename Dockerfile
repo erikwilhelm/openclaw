@@ -248,7 +248,8 @@ RUN --mount=type=cache,id=openclaw-bookworm-apt-cache,target=/var/cache/apt,shar
     fi
 
 ENV NODE_ENV=production
-
+# added symlink to the installed browser
+RUN ln -sf /home/node/.cache/ms-playwright/chromium-1208/chrome-linux64/chrome /usr/local/bin/chromium
 # Security hardening: Run as non-root user
 # The node:24-bookworm image includes a 'node' user (uid 1000)
 # This reduces the attack surface by preventing container escape via root privileges

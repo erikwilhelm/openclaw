@@ -4,6 +4,9 @@ services:
     environment:
       HOME: /home/node
       TERM: xterm-256color
+      PLAYWRIGHT_BROWSERS_PATH: /home/node/.cache/ms-playwright
+      CHROMIUM_FLAGS: "--no-sandbox --disable-setuid-sandbox --disable-gpu --disable-dev-shm-usage"
+      CHROME_PATH: /home/node/.cache/ms-playwright/chromium-1208/chrome-linux64/chrome
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
       XAI_API_KEY: ${XAI_API_KEY}

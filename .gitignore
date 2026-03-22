@@ -134,6 +134,8 @@ ui/src/ui/views/__screenshots__
 ui/.vitest-attachments
 docs/superpowers
 
-
-#secrets
+#runtime, soul, agent browser data
+	
+config/
+!config/openclaw.json
 env.openclaw
