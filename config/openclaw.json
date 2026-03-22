@@ -25,154 +25,34 @@
     "providers": {
       "openai": {
         "baseUrl": "https://api.openai.com/v1",
-        "apiKey": "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",
+        "apiKey": "${OPENAI_API_KEY}",
         "models": [
-          {
-            "id": "gpt-5.4-pro",
-            "name": "GPT-5.4 Pro",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          },
-          {
-            "id": "gpt-5.1-codex",
-            "name": "GPT-5.1 Codex",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          }
+          { "id": "gpt-5.4-pro", "name": "GPT-5.4 Pro" },
+          { "id": "gpt-5.1-codex", "name": "GPT-5.1 Codex" }
         ]
       },
       "perplexity": {
         "baseUrl": "https://api.perplexity.ai",
-        "apiKey": "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",
+        "apiKey": "${PERPLEXITY_API_KEY}",
         "models": [
-          {
-            "id": "sonar-pro",
-            "name": "Sonar Pro",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          }
+          { "id": "sonar-pro", "name": "Sonar Pro" }
         ]
       },
       "openrouter": {
         "baseUrl": "https://openrouter.ai/api/v1",
-        "apiKey": "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",
+        "apiKey": "${OPENROUTER_API_KEY}",
         "models": [
-          {
-            "id": "gemini-2.5-flash",
-            "name": "Gemini 2.5 Flash",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          },
-          {
-            "id": "gemini-2.5-pro",
-            "name": "Gemini 2.5 Pro",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          },
-          {
-            "id": "deepseek/deepseek-chat",
-            "name": "DeepSeek V3.2",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          },
-          {
-            "id": "moonshotai/kimi-k2.5",
-            "name": "Kimi K2.5",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          }
+          { "id": "google/gemini-2.5-flash", "name": "Gemini 2.5 Flash" },
+          { "id": "google/gemini-2.5-pro", "name": "Gemini 2.5 Pro" },
+          { "id": "deepseek/deepseek-chat", "name": "DeepSeek V3.2" },
+          { "id": "moonshotai/kimi-k2.5", "name": "Kimi K2.5" }
         ]
       },
       "xai": {
         "baseUrl": "https://api.x.ai/v1",
-        "apiKey": "xai-JjLSscfDLeZgc6AHtgkclYaV7F52KEBxwtj2yDWxA7aWU0xQ231XzxlIYRG1JWDMOVY17FcL2SYnQ9UU",
+        "apiKey": "${XAI_API_KEY}",
         "models": [
-          {
-            "id": "grok-4.1-fast",
-            "name": "Grok 4.1 Fast",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          }
+          { "id": "grok-4.1-fast", "name": "Grok 4.1 Fast" }
         ]
       }
     }
@@ -184,24 +64,12 @@
       },
       "models": {
         "openai/gpt-5.4-pro": {},
-        "openai/gpt-5.1-codex": {
-          "alias": "GPT"
-        },
-        "gemini/gemini-2.5-flash": {
-          "alias": "Flash"
-        },
-        "gemini/gemini-2.5-pro": {
-          "alias": "Gemini"
-        },
-        "openrouter/deepseek/deepseek-chat": {
-          "alias": "DeepSeek"
-        },
-        "openrouter/moonshotai/kimi-k2.5": {
-          "alias": "Kimi"
-        },
-        "xai/grok-4.1-fast": {
-          "alias": "Grok"
-        }
+        "openai/gpt-5.1-codex": { "alias": "GPT" },
+        "openrouter/google/gemini-2.5-flash": { "alias": "Flash" },
+        "openrouter/google/gemini-2.5-pro": { "alias": "Gemini" },
+        "openrouter/deepseek/deepseek-chat": { "alias": "DeepSeek" },
+        "openrouter/moonshotai/kimi-k2.5": { "alias": "Kimi" },
+        "xai/grok-4.1-fast": { "alias": "Grok" }
       },
       "workspace": "/home/node/.openclaw/workspace",
       "compaction": {
@@ -210,7 +78,7 @@
     }
   },
   "tools": {
-    "profile": "coding",
+    "profile": "full",
     "web": {
       "search": {
         "enabled": true,
@@ -234,15 +102,9 @@
     "internal": {
       "enabled": true,
       "entries": {
-        "command-logger": {
-          "enabled": true
-        },
-        "session-memory": {
-          "enabled": true
-        },
-        "bootstrap-extra-files": {
-          "enabled": true
-        }
+        "command-logger": { "enabled": true },
+        "session-memory": { "enabled": true },
+        "bootstrap-extra-files": { "enabled": true }
       }
     }
   },
@@ -250,8 +112,8 @@
     "telegram": {
       "enabled": true,
       "dmPolicy": "pairing",
-      "botToken": "8753641232:AAFrimXFkKuDlbDCGyuStd3sO_nA4SqFwus",
-      "groupPolicy": "allowlist",
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
+      "groupPolicy": "open",
       "streaming": "partial"
     }
   },
@@ -263,11 +125,12 @@
       "allowedOrigins": [
         "http://localhost:18789",
         "http://127.0.0.1:18789"
-      ]
+      ],
+      "allowInsecureAuth": true
     },
     "auth": {
       "mode": "token",
-      "token": "b573f054d718e44597a5280399babb3d0af94f3e447f3f5dfdbc689896f6feb6"
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
     },
     "trustedProxies": [
       "172.16.0.0/12",
@@ -279,48 +142,17 @@
     },
     "nodes": {
       "denyCommands": [
-        "camera.snap",
-        "camera.clip",
-        "screen.record",
-        "contacts.add",
-        "calendar.add",
-        "reminders.add",
-        "sms.send"
+        "camera.snap", "camera.clip", "screen.record",
+        "contacts.add", "calendar.add", "reminders.add", "sms.send"
       ]
     }
   },
   "skills": {
     "entries": {
-      "openai-image-gen": {
-        "apiKey": "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"
-      },
-      "openai-whisper-api": {
-        "apiKey": "\"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\""
-      },
-      "sag": {
-        "apiKey": "sk_a14646c98d5fc121e584d807636533336aae0da13f1292a3"
-      }
+      "openai-image-gen": { "apiKey": "${OPENAI_API_KEY}" },
+      "openai-whisper-api": { "apiKey": "${OPENAI_API_KEY}" },
+      "sag": { "apiKey": "${SAG_API_KEY}" }
     }
   },
-  "plugins": {
-    "load": {
-      "paths": [
-        "/app/extensions/telegram"
-      ]
-    },
-    "entries": {
-      "telegram": {
-        "enabled": true
-      }
-    },
-    "installs": {
-      "telegram": {
-        "source": "path",
-        "spec": "@openclaw/telegram",
-        "sourcePath": "/app/extensions/telegram",
-        "installPath": "/app/extensions/telegram",
-        "installedAt": "2026-03-22T07:13:58.351Z"
-      }
-    }
-  }
+  "plugins": {}
 }

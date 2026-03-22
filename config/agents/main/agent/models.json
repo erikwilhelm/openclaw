@@ -2,7 +2,7 @@
   "providers": {
     "openai": {
       "baseUrl": "https://api.openai.com/v1",
-      "apiKey": "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",
+      "apiKey": "OPENAI_API_KEY",
       "models": [
         {
           "id": "gpt-5.4-pro",
@@ -103,10 +103,10 @@
     },
     "openrouter": {
       "baseUrl": "https://openrouter.ai/api/v1",
-      "apiKey": "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",
+      "api": "openai-completions",
       "models": [
         {
-          "id": "gemini-2.5-flash",
+          "id": "google/gemini-2.5-flash",
           "name": "Gemini 2.5 Flash",
           "reasoning": false,
           "input": [
@@ -122,7 +122,7 @@
           "maxTokens": 8192
         },
         {
-          "id": "gemini-2.5-pro",
+          "id": "google/gemini-2.5-pro",
           "name": "Gemini 2.5 Pro",
           "reasoning": false,
           "input": [
@@ -168,12 +168,63 @@
           },
           "contextWindow": 200000,
           "maxTokens": 8192
+        },
+        {
+          "id": "auto",
+          "name": "OpenRouter Auto",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192
+        },
+        {
+          "id": "openrouter/hunter-alpha",
+          "name": "Hunter Alpha",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1048576,
+          "maxTokens": 65536
+        },
+        {
+          "id": "openrouter/healer-alpha",
+          "name": "Healer Alpha",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 65536
         }
-      ]
+      ],
+      "apiKey": "OPENROUTER_API_KEY"
     },
     "xai": {
       "baseUrl": "https://api.x.ai/v1",
-      "apiKey": "xai-JjLSscfDLeZgc6AHtgkclYaV7F52KEBxwtj2yDWxA7aWU0xQ231XzxlIYRG1JWDMOVY17FcL2SYnQ9UU",
+      "apiKey": "XAI_API_KEY",
       "models": [
         {
           "id": "grok-4.1-fast",
